@@ -20,13 +20,15 @@ namespace Helpdesk.Models
         public string Email { get; set; }
         public int Department_id { get; set; }
         public int Roles_id { get; set; }
-        public virtual List<Department> Departments { get; set; }
-        public virtual List<Role> Roles { get; set; }
+        public virtual Department Departments { get; set; }
+        public virtual Role Roles { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
     }
     public class Department
     {
         public int Id { get; set; }
         public string Department_Name { get; set; }
+        public virtual List<User> Users { get; set; }
     }
     public class Role
     {
@@ -39,8 +41,8 @@ namespace Helpdesk.Models
     {
         public int Id { get; set; }
         public string Subcategory_Name { get; set; }
-        public int subcategory_id { get; set; }
-        public virtual List<Subcategory> Subcategories { get; set; }
+        public int Category_id { get; set; }
+        public virtual Category Categories { get; set; }
     }
 
     public class Holiday
@@ -68,19 +70,21 @@ namespace Helpdesk.Models
         public DateTime User_id { get; set; }
         public DateTime Category_id { get; set; }
         public DateTime Subcategory_id { get; set; }
-        public virtual List<Type> Types { get; set; }
-        public virtual List<User> Users{ get; set; }
-        public virtual List<Category> Categories { get; set; }
-        public virtual List<Subcategory> Subcategories { get; set; }
+        public virtual Type Types { get; set; }
+        public virtual User Users{ get; set; }
+        public virtual Category Categories { get; set; }
+        public virtual Subcategory Subcategories { get; set; }
     }
     public class Type
     {
         public int Id { get; set; }
         public int Interval { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
     }
     public class Category
     {
         public int Id { get; set; }
         public string Category_Name { get; set; }
+        public virtual List<Subcategory> Subcategories { get; set; }
     }
 }

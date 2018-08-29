@@ -10,5 +10,3 @@ C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdes
 C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.csprojResolveAssemblyReference.cache
 C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.exe
 C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.pdb
-C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.Migrations.HelpdeskDB.resources
-C:\Users\Singgihpratama99\Documents\Visual Studio 2015\Projects\Helpdesk\Helpdesk\obj\Debug\Helpdesk.csproj.GenerateResource.Cache
