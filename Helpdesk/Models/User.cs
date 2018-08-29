@@ -18,31 +18,28 @@ namespace Helpdesk.Models
         public string City { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }
-        public int Department_id { get; set; }
-        public int Roles_id { get; set; }
-        public virtual Department Departments { get; set; }
-        public virtual Role Roles { get; set; }
-        public virtual List<Ticket> Tickets { get; set; }
+        public Department Department_id { get; set; }
+        public Role Roles_id { get; set; }
+        public ICollection<Ticket> Ticket { get; set; }
     }
     public class Department
     {
         public int Id { get; set; }
         public string Department_Name { get; set; }
-        public virtual List<User> Users { get; set; }
+        public ICollection<User> User { get; set; }
     }
     public class Role
     {
         public int Id { get; set; }
         public string Roles { get; set; }
-        public virtual List<User> Users { get; set; }
+        public ICollection<User> User { get; set; }
     }
 
     public class Subcategory
     {
         public int Id { get; set; }
         public string Subcategory_Name { get; set; }
-        public int Category_id { get; set; }
-        public virtual Category Categories { get; set; }
+        public Category Category_id { get; set; }
     }
 
     public class Holiday
@@ -54,7 +51,7 @@ namespace Helpdesk.Models
     public class Ticket
     {
         public int Id { get; set; }
-        public int Type_id { get; set; }
+        public Type Type_id { get; set; }
         public string Description { get; set; }
         public DateTime Dtm_Crt { get; set; }
         public string L1 { get; set; }
@@ -67,24 +64,20 @@ namespace Helpdesk.Models
         public DateTime Closedtime { get; set; }
         public DateTime Technician { get; set; }
         public DateTime Status { get; set; }
-        public DateTime User_id { get; set; }
-        public DateTime Category_id { get; set; }
-        public DateTime Subcategory_id { get; set; }
-        public virtual Type Types { get; set; }
-        public virtual User Users{ get; set; }
-        public virtual Category Categories { get; set; }
-        public virtual Subcategory Subcategories { get; set; }
+        public User User_id { get; set; }
+        public Category Category_id { get; set; }
+        public Subcategory Subcategory_id { get; set; }
     }
     public class Type
     {
         public int Id { get; set; }
         public int Interval { get; set; }
-        public virtual List<Ticket> Tickets { get; set; }
+        public ICollection<Ticket> Ticket { get; set; }
     }
     public class Category
     {
         public int Id { get; set; }
         public string Category_Name { get; set; }
-        public virtual List<Subcategory> Subcategories { get; set; }
+        public ICollection<Subcategory> Subcategories { get; set; }
     }
 }

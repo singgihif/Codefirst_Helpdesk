@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Helpdesk.Models;
+using Helpdesk.Controllers;
 
 namespace Helpdesk.Controllers
 {
-    class DepartmentController
+    class RolesController
     {
         baseContext _context = new baseContext();
         int input;
@@ -62,18 +63,18 @@ namespace Helpdesk.Controllers
         {
             Console.Clear();
             System.Console.Write("Masukkan Nama Departemen : ");
-            string Nama_Departemen = System.Console.ReadLine();
+            string Nama_Rules = System.Console.ReadLine();
             System.Console.Write("Masukkan Id Departemen : ");
-            int Id_dept = Convert.ToInt32(System.Console.ReadLine());
-            var getdept = _context.Departments.Find(Id_dept);
-            Department department = new Department()
+            int Id_rules = Convert.ToInt32(System.Console.ReadLine());
+            var getdept = _context.Roles.Find(Id_rules);
+            Role rules = new Role()
             {
-                Id = Id_dept,
-                Department_Name = Nama_Departemen
+                Id = Id_rules,
+                Roles = Nama_Rules
             };
             try
             {
-                _context.Departments.Add(department);
+                _context.Roles.Add(rules);
                 var result = _context.SaveChanges();
             }
             catch (Exception ex)
@@ -84,10 +85,10 @@ namespace Helpdesk.Controllers
 
         public int Update(int input)
         {
-            System.Console.WriteLine("Masukkan Nama Departemen : ");
-            string Nama_Departemen = System.Console.ReadLine();
-            Department department = GetById(input);
-            department.Department_Name = Nama_Departemen;
+            System.Console.WriteLine("Masukkan Nama Roles : ");
+            string Nama_Rules = System.Console.ReadLine();
+            Role rule = GetById(input);
+            department.Roles = Nama_Rules;
             _context.Entry(department).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
             return input;
